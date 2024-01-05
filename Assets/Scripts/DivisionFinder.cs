@@ -10,6 +10,9 @@ public class DivisionFinder : MonoBehaviour
 
     private static void FindDivisions(int startInclusive, int endInclusive)
     {
+        if (startInclusive > endInclusive)
+            (startInclusive, endInclusive) = (endInclusive, startInclusive);
+        
         FindDivisionsByNumber(startInclusive, endInclusive, 2);
         FindDivisionsByNumber(startInclusive, endInclusive, 3);
         FindDivisionsByNumber(startInclusive, endInclusive, 4);
